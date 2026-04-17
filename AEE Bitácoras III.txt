@@ -1,0 +1,27 @@
+﻿3. Fase Práctica: Hardening y Vigilancia en la Trinchera
+Reto A: Auditoría de Accesos e Intrusiones (Log Analysis y Scripting):
+1. Voy a usar el comando ssh Pedrito@192.168.20.32 para intentar meterme al servidor, seguido de esto voy a fallar la contraseña varias veces originando así un fallo total y que me quite de intentos.
+  
+
+
+
+2. Ahora voy a ver la dirección IP de origen del atacante, el puerto efímero utilizado y el mensaje literal de error del sistema usando este comando: sudo grep “Failed password” /var/log/auth.log | tail -n 10:
+  
+
+
+
+3. Ya para esta tercera parte usaremos los comandos: mkdir -p scripts y nano scripts/check_intruders.sh para meternos en el nano y hacer esto:
+Filtrar exclusivamente los intentos fallidos de conexión de las últimas horas. Pista: Herramientas como grep, awk o sed serán vuestras mejores amigas para extraer columnas de texto. Contar matemáticamente el número total de errores detectados. Generar (o sobrescribir) un archivo de reporte limpio llamado alertas.txt que incluya un encabezado con la fecha y hora exacta de la generación del informe. Requisito de calidad. El script no puede ser un bloque de código incomprensible. Debe estar debidamente documentado mediante comentarios (#) explicando qué hace exactamente cada variable, tubería (|) y comando utilizado.
+
+
+
+
+
+
+
+
+
+
+
+
+Reto B: Configuración del "Escudo" Perimetral con UFW:
